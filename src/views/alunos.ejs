@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+  <%- include('components/head') %>
+  <body>
+    <main>
+      <%- include('components/header') %>
+      <div class="main-alunos">
+        <form action="/alunos" method="POST" class="form form-alunos">
+          <h1>Cadastro de Alunos na biblioteca</h1>
+          <div class="form-group">
+            <div class="input aluno_name">
+              <input
+                type="text"
+                name="aluno_name"
+                class="aluno_name"
+                id="aluno_name"
+                placeholder=""
+              />
+              <label for="aluno_name">Nome do Aluno</label>
+            </div>
+            <div class="input aluno_email">
+              <input
+                type="text"
+                name="aluno_email"
+                class="aluno_email"
+                id="aluno_email"
+                placeholder=""
+              />
+              <label for="aluno_email">Email do Aluno</label>
+            </div>
+
+            <div class="input aluno_serie">
+              <input
+                type="text"
+                name="aluno_serie"
+                class="aluno_serie"
+                id="aluno_serie"
+                placeholder=""
+              />
+              <label for="aluno_serie">Serie do Aluno</label>
+            </div>
+
+            <div class="btn-group">
+              <div class="btn">
+                <button>Cadastrar Aluno</button>
+              </div>
+            </div>
+            <div class="content-msg">
+              <% if (msgError) { %>
+              <div class="msgError"><%= msgError %></div>
+              <% } %> <% if(msgSuccess) { %>
+              <div class="msgSuccess"><%= msgSuccess %></div>
+              <% } %>
+            </div>
+          </div>
+        </form>
+      </div>
+    </main>
+    <%- include('components/footer') %>
+  </body>
+</html>

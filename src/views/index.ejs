@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+  <%- include('components/head') %>
+  <body>
+    <%- include('components/header') %>
+    <main>
+      <section>
+        <div class="content-main home">
+          <h1>livros</h1>
+          <div class="all-books"></div>
+          <% if (results) { results.forEach(livro => { %>
+          <div class="book">
+            <div class="book-img">
+              <img src="<%= livro.book_image %>" alt="" />
+            </div>
+            <div class="book-info">
+              <h3><%= livro.book_name %></h3>
+              <p><%= livro.book_autor %></p>
+            </div>
+            <div class="btn-book">
+              <button>ver livro</button>
+            </div>
+          </div>
+          <%});} else { %>
+          <div class="no-books">
+            <h3>
+              não exite livros cadastrados,
+              <a href="/registerBooks">Clique aqui para cadastrar o livro!</a>
+            </h3>
+          </div>
+
+          <% } %>
+        </div>
+      </section>
+    </main>
+    <%- include('components/footer') %>
+  </body>
+</html>

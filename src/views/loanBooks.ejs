@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+  <%- include('components/head') %>
+  <body>
+    <main>
+      <%- include('components/header') %>
+      <div class="main-loan">
+        <h1>Emprestimo de Livros</h1>
+        <div class="form-loan">
+          <form action="/loanBooks" method="post">
+            <div class="select-book" id="select-book">
+              <div class="get-book" id="get-book">
+                <input
+                  type="text"
+                  name="loanBook"
+                  placeholder="Selecione um Livro"
+                />
+              </div>
+              <div class="list-books" id="list-books">
+                <div class="search-book" id="searck-book">
+                  <input
+                    type="text"
+                    name="search_book"
+                    placeholder="pesquisar Livro"
+                  />
+                </div>
+                <ul class="book-options" id="book-options"></ul>
+              </div>
+            </div>
+            <div class="select-aluno" id="select-aluno">
+              <div class="get-aluno" id="get-aluno">
+                <input
+                  type="text"
+                  name="loan_aluno"
+                  placeholder="Selecione um Livro"
+                />
+              </div>
+              <div class="list-alunos" id="list-alunos">
+                <div class="search-aluno" id="searck-aluno">
+                  <input
+                    type="text"
+                    name="search_aluno"
+                    placeholder="pesquisar Livro"
+                  />
+                </div>
+                <ul class="aluno-options" id="aluno-options"></ul>
+              </div>
+            </div>
+            <div class="data-now">
+              <input type="date" name="loan_date_atual" id="today" />
+            </div>
+            <div class="select-time">
+              <input type="radio" name="addDays" id="10" value="10" /> 10
+              <input type="radio" name="addDays" id="15" value="15" /> 15
+              <input type="radio" name="addDays" id="20" value="20" /> 20
+              <input type="radio" name="addDays" id="25" value="24" /> 25
+              <input type="radio" name="addDays" id="30" value="30" /> 30
+            </div>
+            <div class="date-final">
+              <input type="date" name="loan_date_entrega" />
+            </div>
+            <div class="btn-cadastrar-loan">
+              <button>Cadrastar Emprestimo</button>
+            </div>
+          </form>
+        </div>
+      </div>
+    </main>
+    <%- include('components/footer') %>
+  </body>
+</html>

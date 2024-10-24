@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+  <%- include('components/head') %>
+  <body>
+    <main>
+      <%- include('components/header') %>
+      <div class="content-form-cadastro">
+        <h1>Cadastro de Livros</h1>
+        <form
+          action="/registerBooks"
+          method="post"
+          enctype="multipart/form-data"
+        >
+          <div class="left">
+            <div class="input input-book-image">
+              <label for="book_image" class="image-preview">
+                <!-- <span>Escolha a imagem do Livro</span> -->
+                <img id="img-book" src="/image.png" alt="" />
+              </label>
+              <input
+                type="file"
+                name="book_image"
+                class="book_image"
+                id="book_image"
+                accept="image/*"
+              />
+            </div>
+          </div>
+          <div class="right">
+            <div class="input input-book-name">
+              <label for="book_name"></label>
+              <input
+                type="text"
+                name="book_name"
+                class="book_name"
+                placeholder="Digite o nome do Livro"
+                id="book_name"
+              />
+            </div>
+            <div class="input input-book-autor">
+              <label for="book_autor"></label>
+              <input
+                type="text"
+                name="book_autor"
+                class="book_autor"
+                placeholder="Digite o nome do Autor ou Autora"
+                id="book_autor"
+              />
+            </div>
+            <div class="input input-book-categoria">
+              <label for="book_categoria"></label>
+              <input
+                type="text"
+                name="book_categoria"
+                class="book_categoria"
+                placeholder="Digite uma categoria"
+                id="book_categoria"
+              />
+            </div>
+            <div class="input input-book-desc">
+              <label for="book_desc"></label>
+              <textarea
+                name="book_desc"
+                class="book_desc"
+                placeholder="Digite a descrição do Livro"
+                id="book_desc"
+              ></textarea>
+            </div>
+            <div class="content-btn">
+              <button>cadastro</button>
+            </div>
+            <% if(msgSuccess){%>
+            <div class="msgSuccess"><%= msgSuccess %></div>
+            <% } %> <% if(msgError){%>
+            <div class="msgError"><%= msgError %></div>
+            <% } %>
+          </div>
+        </form>
+      </div>
+      <%- include('components/footer') %>
+    </main>
+    <%- include('components/script') %>
+  </body>
+</html>

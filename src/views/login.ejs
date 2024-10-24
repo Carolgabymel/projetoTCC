@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+  <%- include('components/head') %>
+  <body>
+    <%- include('components/header-main') %>
+    <main>
+      <div class="content-form-cadastro">
+        <h1>login</h1>
+        <form action="/" method="post">
+          <div class="input-email">
+            <label for="user email"></label>
+            <input
+              type="text"
+              name="useremail"
+              class="user-email"
+              placeholder="digite seu email"
+              id="user-email"
+            />
+          </div>
+          <div class="input-password">
+            <label for="user password"></label>
+            <input
+              type="text"
+              name="userpassword"
+              class="user-password"
+              placeholder="digite uma senha"
+              id="user-password"
+            />
+          </div>
+
+          <div class="content-btn">
+            <button>cadastro</button>
+          </div>
+        </form>
+      </div>
+    </main>
+    <%- include('components/footer') %>
+  </body>
+</html>

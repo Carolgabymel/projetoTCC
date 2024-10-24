@@ -1,0 +1,531 @@
+*,
+*::before,
+*::after {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+* {
+  font-family: Georgia, "Times New Roman", Times, serif;
+}
+
+img {
+  max-width: 100%;
+}
+
+a {
+  text-decoration: none;
+}
+li {
+  list-style: none;
+}
+:root {
+  --cor-branco: rgb(255, 255, 255);
+  --cor-preto: rgb(0, 0, 0);
+  --cor-verde: rgb(15, 140, 13);
+  --cor-verde-light: rgb(214, 252, 208);
+  --cor-vermelho: rgb(255, 9, 9);
+  --cor-vermelho-light: rgb(243, 214, 214);
+  --cor-lilas: rgb(210, 120, 255);
+  --cor-azul: rgb(86, 119, 241);
+  --cor-rosa: rgb(255, 164, 246);
+  --cor-cinza: rgb(116, 116, 116);
+  --cor-cinza-light: rgb(182, 182, 182);
+  --cor-amarelo: rgb(255, 242, 155);
+  --cor-laranja: rgb(255, 174, 117);
+}
+
+body {
+  background-color: var(--cor-azul);
+}
+
+.header-home {
+  display: flex;
+  flex-direction: column;
+  background: var(--cor-cinza);
+}
+
+.img-logo {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 1rem 0;
+}
+.main-menu {
+  width: 100%;
+}
+.main-menu ul {
+  display: flex;
+}
+
+.main-menu ul li {
+  position: relative;
+}
+
+.main-menu ul li a {
+  display: flex;
+  padding: 1rem 2rem;
+  font-size: 1.5rem;
+  font-weight: bold;
+  color: var(--cor-branco);
+  transition: all 300ms ease-in-out;
+  position: relative;
+  z-index: 99;
+}
+
+.main-menu ul li a::before {
+  content: "";
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 0;
+  height: 5px;
+  background: var(--cor-lilas);
+  transition: all 300ms ease-in-out;
+  z-index: -1;
+}
+
+.main-menu ul li a:hover::before {
+  width: 100%;
+}
+
+/* .main-menu ul li a:hover{
+    background: var(--cor-lilas);
+} */
+
+.main-menu ul li ul {
+  position: absolute;
+  top: 6rem;
+  width: 14rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  opacity: 0;
+  visibility: hidden;
+  overflow: hidden;
+  transition: all 200ms ease-in-out;
+  background: var(--cor-cinza);
+}
+
+.main-menu ul li:hover ul {
+  opacity: 1;
+  visibility: visible;
+  top: 3.7rem;
+}
+
+/*********************************************
+  configurações gerais
+**********************************************/
+.content-main {
+  padding: 2rem 0;
+}
+
+/*********************************************
+  Estilo da home
+**********************************************/
+.home h1 {
+  text-align: center;
+  padding: 2rem 0;
+  font-size: 2rem;
+}
+
+.all-books {
+  display: flex;
+  width: 80%;
+  margin: 0 auto;
+  gap: 1rem;
+  flex-wrap: wrap;
+}
+
+.book {
+  width: calc(33.333% - 1rem);
+}
+
+.book-img img {
+  width: 235px;
+  height: 370px;
+}
+
+.no-books h3 {
+  text-align: center;
+}
+
+.no-books h3 a {
+  color: var(--cor-branco);
+  transition: color 300ms ease-in-out;
+}
+
+.no-books h3 a:hover {
+  color: var(--cor-lilas);
+}
+
+/*********************************************
+  estilo do formulario de cadastro
+**********************************************/
+
+.content-form-cadastro {
+  width: 80%;
+  margin: 0 auto;
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+}
+.content-form-cadastro h1 {
+  text-align: center;
+  width: 100%;
+  padding: 3rem;
+}
+
+.content-form-cadastro form {
+  width: 60%;
+  padding: 1rem 0;
+  display: flex;
+  gap: 2rem;
+}
+
+.content-form-cadastro form .input,
+.content-form-cadastro form .content-btn {
+  padding: 0 0 1rem 0;
+}
+
+.content-form-cadastro form div input {
+  width: 100%;
+  font-size: 1.2rem;
+  padding: 0.5rem 1rem;
+  outline: none;
+  border: 0.2rem solid var(--cor-lilas);
+  border-radius: 0.5rem;
+}
+.content-form-cadastro form .content-btn button {
+  width: 100%;
+  font-size: 1.2rem;
+  cursor: pointer;
+  background: var(--cor-cinza);
+  border: none;
+  padding: 0.5rem 0;
+  border-radius: 0.5rem;
+  transition: background 300ms ease-in-out;
+}
+.content-form-cadastro form .content-btn button:hover {
+  background-color: var(--cor-rosa);
+}
+
+.content-form-cadastro .input-book-desc .book_desc {
+  width: 100%;
+  font-size: 1.2rem;
+  padding: 0.5rem 1rem;
+  outline: none;
+  border: 0.2rem solid var(--cor-lilas);
+  border-radius: 0.5rem;
+  height: 10rem;
+}
+
+.left {
+  display: flex;
+  flex-direction: column;
+}
+
+.left,
+.right {
+  width: 50%;
+}
+
+/*************************************
+    Estilo do previw da imagem
+**************************************/
+.content-form-cadastro .input-book-image {
+  display: flex;
+  justify-content: center;
+}
+
+.content-form-cadastro .input-book-image .book_image {
+  display: none;
+}
+
+.content-form-cadastro .input-book-image .image-preview {
+  background: var(--cor-branco);
+  display: flex;
+  justify-content: center;
+  height: 450px;
+  color: var(--cor-cinza);
+  font-size: 1.2rem;
+  cursor: pointer;
+  border: 0.2rem solid var(--cor-lilas);
+  border-radius: 0.7rem;
+  transition: color 300ms ease-in-out;
+}
+.content-form-cadastro .input-book-image img {
+  border-radius: 0.5rem;
+}
+
+.content-form-cadastro .input-book-image .image-preview:hover {
+  color: var(--cor-preto);
+}
+
+/*************************************
+  Mensagem de erro e sucesso
+***************************************/
+
+.content-msg {
+  padding-top: 1rem;
+}
+
+.msgErrorInput {
+  padding: 0.5rem 0;
+  font-size: 1rem;
+}
+
+.msgError,
+.msgSuccess {
+  padding: 1rem;
+  font-size: 1rem;
+}
+
+.msgError,
+.msgSuccess,
+.msgErrorInput {
+  text-align: center;
+  font-weight: bold;
+  border-radius: 0.5rem;
+}
+
+.msgError,
+.msgErrorInput {
+  color: var(--cor-vermelho);
+  background: var(--cor-vermelho-light);
+}
+
+.msgSuccess {
+  color: var(--cor-verde);
+  background: var(--cor-verde-light);
+}
+
+/********************************
+    Login Form
+******************************/
+
+.form-login {
+  width: 40%;
+  margin: 0 auto;
+}
+
+.form-alunos {
+  width: 40%;
+  margin: 0 auto;
+}
+
+.form-alunos .form-group{
+ padding-bottom: 4rem;
+ width: 60%;
+ margin: 0 auto;
+}
+
+
+
+
+.form-alunos h1,
+.form-login h1 {
+  text-align: center;
+  padding: 3rem 0;
+}
+
+.form-alunos .form-group .input,
+.form-login .form-group .input {
+  position: relative;
+  padding-bottom: 2rem;
+}
+
+.form-alunos .form-group .input input,
+.form-login .form-group .input input {
+  width: 100%;
+  padding: 0.5rem 1rem;
+  outline: none;
+  font-size: 1.2rem;
+  border: none;
+  border-radius: 0.5rem;
+  transition: all 300ms ease-in-out;
+}
+
+.form-alunos .form-group .input input:-webkit-autofill,
+.form-login .form-group .input input:-webkit-autofill {
+  transition: background-color 5000000000s ease-in-out 0s;
+}
+
+.form-alunos .form-group .input label,
+.form-login .form-group .input label {
+  position: absolute;
+  top: 28%;
+  left: 5%;
+  font-weight: bold;
+  color: var(--cor-cinza);
+  transform: translateY(-50%);
+  transition: all 300ms ease-in-out;
+  pointer-events: none;
+}
+
+.form-alunos .form-group .input input:not(:placeholder-shown) ~ label,
+.form-alunos .form-group .input input:focus + label 
+.form-login .form-group .input input:not(:placeholder-shown) ~ label,
+.form-login .form-group .input input:focus + label {
+  top: -15%;
+  left: 0;
+  font-size: 0.8rem;
+  padding: 0 0.5rem;
+  color: var(--cor-preto);
+}
+
+.form-alunos .form-group .btn-group{
+  grid-area: btn;
+}
+
+.form-alunos .form-group .btn-group .btn
+.form-login .form-group .btn-group .btn {
+  display: flex;
+  justify-content: center;
+  width: 100%;
+}
+
+.form-alunos .form-group .btn-group .btn button, 
+.form-login .form-group .btn-group .btn button {
+  border: 0;
+  width: 100%;
+  border-radius: 0.5rem;
+  padding: 0.5rem 0;
+  cursor: pointer;
+  font-size: 1.2rem;
+  font-weight: bold;
+  background: var(--cor-cinza-light);
+  transition: all 300ms ease-in-out;
+}
+
+.form-alunos .form-group .btn-group .btn button:hover,
+.form-login .form-group .btn-group .btn button:hover {
+  background: var(--cor-verde);
+}
+
+/********************************
+    Footer
+******************************/
+
+.content-footer {
+  display: flex;
+  justify-content: center;
+  padding: 3rem;
+  background: var(--cor-cinza);
+}
+
+/********************************
+    Estilo do form loan
+******************************/
+
+.form-loan {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.form-loan form{
+  width: 40%;
+}
+
+.select-book {
+  position:relative;
+}
+
+.get-book{
+  position: relative;
+}
+
+.get-book input{
+  width: 100%;
+  outline: none;
+  padding: 0.5rem 1rem;
+  border: none;
+  font-size: 1.1rem;
+  border-radius: 0.4rem;
+}
+
+.get-book::after {
+  content: "";
+  position: absolute;
+  top: 50%;
+  right: 15px;
+  transform: translateY(-50%);
+  border-top: 10px solid var(--cor-preto);
+  border-left: 7px solid transparent;
+  border-right: 7px solid transparent;
+  transition: transform 300ms ease-in-out;
+}
+
+.list-books{
+  background: var(--cor-branco);
+  border-radius: 0.4rem;
+  position: absolute;
+  color: var(--cor-preto);
+  width: 100%;
+  margin-top: 0.1rem;
+  padding: 1rem;
+  opacity: 0;
+  visibility: hidden;
+  transition: opacity 300ms ease-in-out, visibility 300ms ease-in-out;
+}
+
+.search-book input {
+  width: 100%;
+  border: none;
+  outline: none;
+  background: var(--cor-cinza-light);
+  padding: 0.5rem 1rem;
+  font-weight: bold;
+  border-radius: 0.4rem;
+}
+
+.list-books ul{
+  padding-top: 0.5rem;
+  max-height: 300px;
+  overflow: auto;
+}
+
+.list-books ul li {
+  padding: 0.3rem 0.5rem;
+  cursor: pointer;
+  transition: background 300ms ease-in-out;
+}
+
+.list-books ul li:hover{
+  background: var(--cor-lilas);
+}
+
+.list-books.active{
+  opacity: 1;
+  visibility: visible;
+}
+
+.list-books.active .get-book::after{
+  transform: rotate(-90deg);
+}
+
+/********************************
+    responsivo
+******************************/
+
+@media screen and (max-width: 850px) {
+  .content-form-cadastro form {
+    display: block;
+  }
+
+  .left,
+  .right {
+    width: 100%;
+  }
+  .content-form-cadastro .input-book-image .image-preview {
+    height: auto;
+  }
+}
+
+@media screen and (max-width: 1450px) {
+  .content-form-cadastro form {
+    width: 100%;
+  }
+}

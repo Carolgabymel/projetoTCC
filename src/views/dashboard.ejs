@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+  <%- include('components/head') %>
+  <body>
+    <main>
+      <%- include("components/header-main") %>
+      <h1>dashboard</h1>
+      <div class="content-admin"></div>
+      <% if (msgSuccess) { %>
+      <div class="msgSuccess"><%= msgSuccess %></div>
+      <% } %>
+      <div class="admin-profile">
+        <nav>
+          <a href="#"><%= adminUser.admin_name %></a>
+        </nav>
+        <nav>
+          <a href="/logoutAdmin">logout</a>
+        </nav>
+      </div>
+      <%- include("components/footer") %>
+    </main>
+    <%- include("components/script") %>
+  </body>
+</html>
