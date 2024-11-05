@@ -13,8 +13,6 @@ const logoutAdminRoute = require("./src/routes/logoutAdminRoute");
 const registerBooksRoute = require("./src/routes/registerBookRoute");
 const alunosRoute = require("./src/routes/alunosRoute");
 const loanBooksRoute = require("./src/routes/loanBooksRoute");
-const getAllBooksAPIRoute = require("./src/routes/getBooksAPIRoute");
-const alunosRouteAPI = require("./src/routes/alunosRouteAPI");
 
 const app = express();
 const port = process.env.PORTSERVER || 3000;

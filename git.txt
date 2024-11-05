@@ -1,0 +1,7 @@
+git add .
+
+git commit -m 'exemplo: atualizar os arquivos'
+
+git push
+
+git pull
