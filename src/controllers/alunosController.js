@@ -13,7 +13,7 @@ module.exports = class AlunoController {
 
     if (!aluno_name || !aluno_email || !aluno_serie) {
       return res.redirect(
-        "/alunos?msgSuccess=Aluno ou Aluna cadastrado com sucesso!"
+        "/alunos?msgError=todos os campos precisam ser preenchidos!"
       );
     }
 

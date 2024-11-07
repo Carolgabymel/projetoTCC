@@ -8,7 +8,7 @@
         <div class="content-main home">
           <h1>livros</h1>
           <div class="all-books"></div>
-          <% if (results) { results.forEach(livro => { %>
+          <% if (results.length > 0) { results.forEach(livro => { %>
           <div class="book">
             <div class="book-img">
               <img src="<%= livro.book_image %>" alt="" />

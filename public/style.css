@@ -64,7 +64,7 @@ body {
 
 .main-menu ul li a {
   display: flex;
-  padding: 1rem 2rem;
+  padding: 1rem;
   font-size: 1.5rem;
   font-weight: bold;
   color: var(--cor-branco);
@@ -131,7 +131,8 @@ body {
 }
 
 .all-books {
-  display: flex;
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
   width: 80%;
   margin: 0 auto;
   gap: 1rem;
@@ -418,6 +419,16 @@ body {
 /********************************
     Estilo do form loan
 ******************************/
+
+.main-loan {
+  padding: 4rem 0 0 0;
+}
+
+.main-loan {
+  text-align: center;
+  padding-bottom: 2rem;
+}
+
 
 .form-loan {
   display: flex;
