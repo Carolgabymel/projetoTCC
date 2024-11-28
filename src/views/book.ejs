@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+  <%- include("components/head") %>
+  <body>
+    <main>
+      <%- include("components/header") %>
+      <section>
+        <div class="content-book">
+          <% book.forEach (livro => { %>
+
+          <h1><%= livro.book_name %></h1>
+          <div class="content-msg">
+            <% if(msgSuccess){%>
+            <div class="msgSuccess"><%= msgSuccess %></div>
+            <% } %> <% if(msgError){%>
+            <div class="msgError"><%= msgError %></div>
+            <% } %>
+          </div>
+          <div class="book">
+            <div class="book-img">
+              <img src="<%= livro.book_image %>" alt="" />
+            </div>
+            <div class="book-info">
+              <div class="autor">
+                <span>Autor(a): </span>
+                <p><%= livro.book_autor %></p>
+              </div>
+              <div class="categoria">
+                <span>categoria: </span>
+                <p><%= livro.book_categoria %></p>
+              </div>
+              <div class="desc">
+                <span>Descrição: </span>
+                <p><%= livro.book_desc %></p>
+              </div>
+              <div class="btns-book">
+                <a class="voltar" href="/home">Todos os livros</a>
+                <a
+                  class="edit"
+                  href="/registerBooks/editBook/<%= livro.book_id %>"
+                  >Editar</a
+                >
+                <a
+                  class="delete"
+                  onclick="openModaDeleteBookBySlug(`<%= livro.book_id %>`, `<%= livro.book_name %>`)"
+                  href="#"
+                  >Deletar</a
+                >
+              </div>
+            </div>
+          </div>
+          <% }) %>
+        </div>
+        <div class="modal hide-modal" id="modal">
+          <form action="" method="post">
+            <div class="content-delete" id="content-delete">
+              <p>Você está preste a deletar o livro</p>
+              <h3></h3>
+              <h4>
+                Se Você realmente quer deletar clique em Deletar se não clique
+                em Cancelar
+              </h4>
+              <div class="btns_delete">
+                <button class="btn_cancel" id="Cancelar" type="reset">
+                  Cancelar
+                </button>
+                <button class="btn_delete">Delete</button>
+              </div>
+            </div>
+          </form>
+        </div>
+      </section>
+      <%- include('components/footer') %>
+    </main>
+  </body>
+</html>

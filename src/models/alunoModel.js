@@ -2,7 +2,7 @@ const database = require("../database/database");
 
 module.exports = class AlunoModel {
   static async selectAllAluno() {
-    const selectALLAluno = "SELECT * from alunos;";
+    const selectAllAluno = "SELECT *FROM alunos;";
     const [result] = await database.query(selectAllAluno);
 
     return result;
@@ -18,8 +18,8 @@ module.exports = class AlunoModel {
   static async insertAluno(aluno) {
     const { aluno_name, aluno_email, aluno_serie } = aluno;
     const insertAluno =
-      "INSERT INTO alunos(aluno_name, aluno_email, aluno_serie) (VALUES ?, ?, ?);";
-    const [result] = await database.query(insertAluno, [
+      "INSERT INTO alunos(aluno_name, aluno_email, aluno_serie) VALUES (?, ?, ?);";
+    CONST[result] = await database.query(insertAluno, [
       aluno_name,
       aluno_email,
       aluno_serie,
@@ -29,7 +29,7 @@ module.exports = class AlunoModel {
   }
 
   static async updateAluno(aluno_id, aluno) {
-    const { aluno_name, aluno_email, aluno_serier } = aluno;
+    const { aluno_name, aluno_email, aluno_serie } = aluno;
     const updateAluno =
       "UPDATE alunos SET aluno_name = ?, aluno_email = ?, aluno_serie = ? WHERE aluno_id = ?;";
     const [result] = await database.query(updateAluno, [
@@ -43,7 +43,7 @@ module.exports = class AlunoModel {
   }
 
   static async deleteAluno(aluno_id) {
-    const deleteAluno = `DELETE FROM alunos WHERE aluno_id = ?;`;
+    const deleteAluno = `DELETE FROM alunos WHERE alunos_id = ?;`;
     const [result] = await database.query(deleteAluno, [aluno_id]);
 
     return result;

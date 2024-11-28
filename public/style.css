@@ -131,8 +131,7 @@ body {
 }
 
 .all-books {
-  display: grid;
-  grid-template-columns: repeat(4, 1fr);
+  display: flex;
   width: 80%;
   margin: 0 auto;
   gap: 1rem;
@@ -419,16 +418,14 @@ body {
 /********************************
     Estilo do form loan
 ******************************/
-
 .main-loan {
   padding: 4rem 0 0 0;
 }
 
-.main-loan {
+.main-loan h1 {
   text-align: center;
   padding-bottom: 2rem;
 }
-
 
 .form-loan {
   display: flex;
@@ -539,4 +536,43 @@ body {
   .content-form-cadastro form {
     width: 100%;
   }
+}
+
+.content_loan_books {
+  width: 90%;
+  margin: 0 auto;
+  padding: 2rem 0;
+}
+
+.content_loan_books h1 {
+  text-align: center;
+  padding-bottom: 2rem;
+}
+
+.row {
+  background: var(--cor-branco);
+  padding: 0.7rem;
+}
+
+.header-row {
+  font-weight: bold;
+}
+
+.border-row {
+  display: grid;
+  grid-template-columns: 25% 25% 17% 17% 8% 8%;
+  border-bottom: 0.1rem solid var(--cor-preto);
+}
+
+.border-row:nth-of-type(1) {
+  border-top: 0.1rem solid var(--cor-preto);
+}
+
+.col {
+  border-left: 0.1rem solid var(--cor-preto);
+  padding: 0.3rem 0 0.3rem 0.5rem;
+}
+
+.col:nth-last-child(1) {
+  border-right: 0.1rem solid var(--cor-preto);
 }

@@ -13,6 +13,10 @@ const logoutAdminRoute = require("./src/routes/logoutAdminRoute");
 const registerBooksRoute = require("./src/routes/registerBookRoute");
 const alunosRoute = require("./src/routes/alunosRoute");
 const loanBooksRoute = require("./src/routes/loanBooksRoute");
+const getAllBooksAPIRoute = require("./src/routes/getBooksAPIRoute");
+const alunosRouteAPI = require("./src/routes/alunosRouteAPI");
+const categoriesRoute = require("./src/routes/categoriesBooksRoute");
+const bookRoute = require("./src/routes/bookRoute");
 
 const app = express();
 const port = process.env.PORTSERVER || 3000;
@@ -33,7 +37,7 @@ app.use(
     secret: process.env.SESSIONSECRET,
     resave: true,
     cookie: {
-      maxAge: 60 * 60 * 1000,
+      maxAge: 24 * 60 * 60 * 1000,
     },
     saveUninitialized: true,
   })
@@ -47,8 +51,10 @@ app.use("/registerBooks", registerBooksRoute);
 app.use("/alunos", alunosRoute);
 app.use("/loanBooks", loanBooksRoute);
 app.use("/logoutAdmin", logoutAdminRoute);
+app.use("/livros", categoriesRoute);
 app.use("/getAllBooksAPI", getAllBooksAPIRoute);
 app.use("/getAllAlunosAPI", alunosRouteAPI);
+app.use("/book", bookRoute);
 
 app.listen(port, async () => {
   const [result] = await database.query("SELECT 1");

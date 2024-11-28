@@ -63,9 +63,9 @@
               <button>Cadrastar Emprestimo</button>
             </div>
             <div class="content-msg">
-              <% if (msgError) { %>
-              <div class="msgError"><%= msgError %></div>
-              <% } %> <% if(msgSuccess){ %>
+              <% if(msgError) { %>
+              <div class="" msgError><%= msgError %></div>
+              <% } %> <% if(msgSuccess) { %>
               <div class="msgSuccess"><%= msgSuccess %></div>
               <% } %>
             </div>
@@ -74,13 +74,13 @@
       </div>
       <div class="container_loan_books">
         <div class="content_loan_books">
-          <h1>Livros emprestados</h1>
+          <h1>Livros Emprestados</h1>
           <div class="row">
-            <div class="border-row header-row">
-              <div class="col">Livro</div>
+            <div class="border-row header-rom">
+              <div class="col">Livros</div>
               <div class="col">Aluno</div>
-              <div class="col">Data de retirada</div>
-              <div class="col">Data de entrega</div>
+              <div class="col">Data da Retirada</div>
+              <div class="col">Data da Entrega</div>
               <div class="col">Editar</div>
               <div class="col">Deletar</div>
             </div>
@@ -99,11 +99,47 @@
                 <a href="/loan/deleteLoan/<%= loan.loan_id %>">Deletar</a>
               </div>
             </div>
-            <%})} else { %>
+            <% })} else { %>
             <div>Não foi encontrado nenhum registro!</div>
-            <%} %>
+            <% } %>
           </div>
         </div>
+      </div>
+      <div class="modal hide-modal" id="modal">
+        <form action="" method="post">
+          <div class="content-delete" id="content-delete">
+            <p>Você está prestes a deletar o Cadastro do Emprestimo do Livro</p>
+            <h3></h3>
+            <h4>
+              Se você realmente quer deletar clique em Deletar se não clique em
+              Cancelar
+            </h4>
+            <div class="btns_delete">
+              <button class="btn_cancel" id="cancelar" type="reset">
+                Cancelar
+              </button>
+              <button class="btn_delete">Delete</button>
+            </div>
+          </div>
+        </form>
+      </div>
+      <div class="modal hide-modal" id="modal">
+        <form action="" method="post">
+          <div class="content-delete" id="content-delete">
+            <p>Você está preste para deletar o cadastro do livro</p>
+            <h3></h3>
+            <h4>
+              Se Você realmente quer deletar clique em Deletar se não clique em
+              Cancelar
+            </h4>
+            <div class="btns_delete">
+              <button class="btn_cancel" id="Cancelar" type="reset">
+                Cancelar
+              </button>
+              <button class="btn_delete">Delete</button>
+            </div>
+          </div>
+        </form>
       </div>
       <%- include('components/footer') %>
     </main>

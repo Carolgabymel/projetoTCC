@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+  <%- include("components/head") %>
+  <body>
+    <main>
+      <%- include("components/header") %>
+      <section>
+        <div class="content-main home">
+          <h1>Livros da Categoria Infanto Juvenil</h1>
+          <div class="all-books">
+            <% if (infantojuvenil.length > 0) { infantojuvenil.forEach(livro =>
+            { %>
+            <div class="book">
+              <div class="book-img">
+                <img src="<%= livro.book_image %>" alt="" />
+              </div>
+              <div class="book-info">
+                <h3><%= livro.book_name %></h3>
+                <p><%= livro.book_autor %></p>
+              </div>
+              <div class="btn-book">
+                <a href="/book/<%= livro.book_slug %>"></a>
+              </div>
+            </div>
+            <% });} %>
+          </div>
+          <% if (infantojuvenil.length === 0) { %>
+          <div class="no-books">
+            <h3>
+              Não existe livros cadastrados com a Categoria Infanto Juvenil,
+              <a href="/registerBooks">Clique aqui para Cadastrar um livro!</a>
+            </h3>
+          </div>
+          <% } %>
+        </div>
+      </section>
+      <%- include("components/footer") %>
+    </main>
+    <%- include("components/script") %>
+  </body>
+</html>
